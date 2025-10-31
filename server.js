@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { mongooseConnect,mongoConnect } from "./src/config/mongoConfig.js";
-
+import { mongooseConnect, mongoConnect } from "./src/config/mongoConfig.js";
 
 import config from "./src/config/config.js";
 import authRouter from "./src/routes/authRouter.js";
