@@ -58,8 +58,10 @@ export const updateReviewStatusController = async (req, res) => {
     //calculate average rating
     const totalRating = activeReviews.reduce((sum, r) => sum + r.rating, 0);
     //change the average rating of the product
-    const avgRating =
+    let avgRating =
       activeReviews.length > 0 ? totalRating / activeReviews.length : 0;
+
+    avgRating = avgRating.toFixed(2);
 
     const averageRatingUpdate = await updateProductQuery(review.productId, {
       averageRating: avgRating,

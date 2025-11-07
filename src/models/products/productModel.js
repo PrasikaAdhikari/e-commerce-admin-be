@@ -5,7 +5,7 @@ export const addProduct = (productObj) => {
 };
 
 export const getAllProductsQuery = () => {
-  return Product.find();
+  return Product.find().sort({ createdAt: -1 });
 };
 export const getProductsByFilter = (filter) => {
   return Product.find(filter);
